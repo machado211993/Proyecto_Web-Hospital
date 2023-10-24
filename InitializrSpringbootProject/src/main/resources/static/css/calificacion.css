@@ -1,0 +1,130 @@
+*{margin: 0; padding:0; box-sizing: border-box;
+}
+
+html{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.header{
+    height: 100px;
+}
+
+.header li{
+    font-size: 18px;
+    text-shadow: 1px 1px 0.5px white;
+    color: white;
+}
+
+.footer{
+    height: 100px;
+}
+
+.footer li{
+    font-size: 13px;
+    text-shadow: 1px 1px 0.5px white;
+    color: white;
+}
+body{
+    background-image: url(../imagen/fondo.svg); 
+    background-repeat:no-repeat;
+    background-position-x:center;
+}
+
+main{
+    width: 100%;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+}
+
+.hed-calificacion{
+    margin: auto;
+    padding: 20px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    box-shadow: 6px 6px 10px black;
+    background-color: #bbd5f9;
+}
+
+.text-titulos{
+    margin: 10px auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card-contenedor{
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+.container-star{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.btn-calificar{
+    margin: auto;
+    margin-top: 15px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-calificar button{
+    width: 300px;
+    font-size: 18px;
+    color: white;
+
+}
+
+formulario{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.rating{
+    display: flex;
+    flex-direction:row-reverse;
+    justify-content: center;
+    gap:15px;
+}
+
+.rating input{
+    width:40px;
+    height:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+.rating input::before{
+    content: '\f005';
+    font-family: fontAwesome;
+    font-size: 34px;
+    color: #111;
+    transition: .6s; 
+}
+
+.rating input:hover~input::before, 
+.rating input:hover::before,
+.rating input:checked~input::before, 
+.rating input:checked::before {
+    color:#2B99E5; 
+}
+
+
+

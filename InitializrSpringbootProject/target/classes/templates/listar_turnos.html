@@ -1,0 +1,125 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="es">
+    <head>
+        <title>Mis Turnos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="shortcut icon" th:href="@{https://cdn0.iconfinder.com/data/icons/scenarium-vol-10/128/015-512.png}">
+        <link th:href="@{/css/turno.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/footer.css}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <!--th:text="${paciente.motivoDeConsulta}"-->
+
+
+        <div class="header">
+            <nav th:replace= "/fragments/navbar :: nav"></nav>
+        </dev>
+
+        <main>    
+            <section>
+                <div align="center" class="mt-4">
+                    <img  src="/imagen/listadoturnos.png" width="20%" >
+                </div>
+                <div class="d-flex justify-content-center align-items-end">
+                    <h3 class="text">Listado de Turnos</h3>
+                </div>
+
+                <div sec:authorize="hasRole('PROFESIONAL')">
+                    <form th:action="@{/turno/filtrar}" method="get" class="form-inline">
+                        <!--
+                        <div class="input-filtr">
+                            <input type="text" name="palabraClave" class="form-groupmx-sm-3 mb-2" placeholder="Ej: GINECOLOGIA" required>
+                        </div>
+                        -->
+                        <div class="form-group mb-2 mx-5 text-filtro">
+                            <label>Ordenar :</label>
+                        </div> 
+
+                        <select class="custom-select mr-sm-2" name="palabraClave" >
+                            <option selected value="" >Seleccionar</option>
+
+                            <option value="HOY" th:selected="${palabraClave == 'HOY'}">Turnos de hoy</option>
+                            <option value="FECHA" th:selected="${palabraClave == 'FECHA'}">Fecha más próxima</option>
+                            <option value="PACIENTE" th:selected="${palabraClave == 'PACIENTE'}">Pacientes alfabeticamente</option>
+                        </select>
+
+                        <input type="hidden" name="idProfesional" th:value="${idProfesional}">
+
+                        <div class="filtro-btn">
+                            <input type="submit" value="Buscar" class="btn btn-primary mb-2" >
+                            <button class="mb-2 btn btn-primary float-end">
+                                <a th:href="@{/turno/listar}" class="text-white">Listar Todos</a>
+                            </button>
+                        </div>
+
+                        <div th:if="${mensaje}">
+                            <p th:text="${mensaje}"></p>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="table-responsive-sm tb-usuario">
+                    <table class="table table-striped table-bordered border-primary">
+                        <thead>
+                            <tr>
+                                <th scope="col" id="columna-turno">N° de Turno</th>
+                                <th scope="col" sec:authorize="hasAnyRole('ADMIN', 'PROFESIONAL')">Paciente</th>
+                                <th scope="col">Profesional</th>
+                                <th scope="col">Especialidad</th>
+                                <th scope="col">Modalidad</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Horario</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Motivo de consulta</th>
+                                <th scope="col" sec:authorize="hasAnyRole('PACIENTE', 'PROFESIONAL', 'ADMIN')">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody
+                            class="table-group-divider border-top-color"
+                            th:each="turno : ${turnos}"
+                            >
+                            <tr>
+                                <td th:text="${turno.id}"></td>
+                                <td sec:authorize="hasAnyRole('ADMIN', 'PROFESIONAL')" th:text="${turno.paciente.apellido}+', '+${turno.paciente.nombre} "></td>
+                                <td th:text="${turno.profesional.apellido}+', '+${turno.profesional.nombre} "></td>
+                                <td th:text="${turno.profesional.especialidad}"></td>
+                                <td th:text="${turno.profesional.modalidad}"></td>
+                                <td th:text="${turno.fecha}"></td>
+                                <td th:text="${turno.horario}"></td>
+                                <td th:text="'$ '+${turno.profesional.precio}"></td>
+                                <td th:text="${turno.motivoDeConsulta}"></td>
+                                <td class="d-flex flex-column justify-content-center m-auto align-items-center">
+                                    <button class="mb-2 btn btn-primary" sec:authorize="hasRole('PACIENTE')">
+                                        <a th:href="@{/turno/cancelar/__${turno.id}__}" class="text-white">Cancelar Turno</a>
+                                    </button>
+                                    <button class="mb-2 btn btn-primary" sec:authorize="hasAnyRole('PACIENTE', 'PROFESIONAL', 'ADMIN')">
+                                        <a th:href="@{/turno/modificar/__${turno.id}__}" class="text-white" style="white-space: nowrap;">Editar Turno</a>
+                                    </button>
+                                       <button th:if="${((#dates.format(#dates.createNow(), 'yyyy-MM-dd') > turno.fecha) or (#dates.format(#dates.createNow(), 'yyyy-MM-dd') == turno.fecha and #dates.format(#dates.createNow(), 'HH') >= turno.horario.toString())) and (turno.calificacion == null)}" class="mb-2 btn btn-primary" sec:authorize="hasAnyRole('PACIENTE')">
+                                    <a  th:href="@{/turno/calificar/__${turno.id}__}" class="text-white h-auto" style="white-space: nowrap;">Calificar Profesional</a>
+                                </button>
+                                    <button class="mb-2 btn btn-primary" sec:authorize="hasRole('PROFESIONAL')">
+                                        <a th:href="@{/historia-clinica/registrar/__${turno.id}__}" class="text-white">Agregar observación</a>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <div class="container footer">
+            <footer th:replace= "/fragments/footer :: footer"></footer>
+        </div>
+
+        <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>   
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

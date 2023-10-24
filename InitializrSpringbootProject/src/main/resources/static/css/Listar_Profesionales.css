@@ -1,0 +1,109 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 2 jun 2023, 04:45:05
+    Author     : manue
+*/
+
+html{
+    width: 100vw;
+    height: 100vh;
+}
+
+.header li{
+    font-size: 18px;
+    text-shadow: 1px 1px 0.5px white;
+    color: white;
+}
+
+.footer li{
+    font-size: 13px;
+    text-shadow: 1px 1px 0.5px white;
+    color: white;
+}
+
+
+html, body{ /*imagen azul de fondo*/
+/*    background-image: url(../imagen/fondo.svg);*/
+    background-repeat:no-repeat;
+    background-position-x:center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+main{
+    min-height: calc(100vh - (100px + 100px));
+}
+
+.footer{
+    width: 100vw;
+    height: 100px;
+    margin-top: 10px
+}
+
+.header{
+    width: 100vw;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.contenedor{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.contenedor-filtros{
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.text-filtro{
+    font-size: 25px;
+    margin-right: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.contenedor-listado{
+    margin-top: 20px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 10px 10px 15px black;
+    background-color: lightskyblue;
+}
+
+.titulo-tabla h3{
+    width: 100%;
+    text-align: center;
+}
+
+.list-profesionales{  
+    width: 100%;
+    justify-content: center;
+}
+
+.filtro-btn{
+    margin: 30px;
+}
+
+.filtro-btn button{
+    margin-left: 30px;
+    background-color: none;
+    border: none;
+}
+
+th{
+   width: 50px;
+}

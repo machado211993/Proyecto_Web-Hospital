@@ -1,0 +1,82 @@
+body{
+/*    background-image: url('../imagen/aa.jpg');*/
+    background-size: contain;
+    background-repeat: repeat;
+    background-color: #e8e8e8;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Numans', sans-serif;
+}
+
+main{
+    width: 100vw;
+    min-height: calc(100vh - 200px);
+}
+
+.cuerpo{
+    width: 100vw;
+    height: auto;
+}
+
+.header_content{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#parrafo{
+    align-content: center;
+}
+
+.header_tit{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    text-indent: 15px;
+}
+
+.head-bot{
+    display: flex;
+    flex-direction: column;
+}
+
+.header_button{
+    width: 350px;
+}
+
+/*.row{
+    background-color: ;
+}*/
+.header_content{
+
+}
+/*tamaño a la imagen */
+.carousel-inner img {
+    width: 100%;
+    max-height: 300px; /*altura imagen*/
+}
+/*tamaño carousel */
+.carousel-inner{
+    height: 300px; /*altura carousel*/
+}
+
+html{
+    width: 100vw;
+    height: 100vh;
+}
+
+.header li{
+    font-size: 18px;
+    text-shadow: 1px 1px 0.5px white;
+    color: white;
+}
+
+.footer li{
+    font-size: 13px;
+    text-shadow: 1px 1px 0.5px white;
+    color: white;
+}
+
+.header img{
+    visibility: hidden;
+}

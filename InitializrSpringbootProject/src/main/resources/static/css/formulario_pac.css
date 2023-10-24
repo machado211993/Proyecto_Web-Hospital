@@ -1,0 +1,137 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.header{
+    height: 100px;
+}
+
+.header li{
+    font-size: 18px;
+    text-shadow: 1px 1px 0.5px white;
+    color: white;
+}
+
+.footer{
+    height: 100px;
+}
+
+.footer li{
+    font-size: 13px;
+    text-shadow: 1px 1px 0.5px white;
+    color: white;
+}
+
+
+/*etiqueta form*/
+form{
+    width: 60%; /*ancho*/  
+    margin: 0 auto; /*centrado*/
+    padding: 10px;
+
+}
+/*agregue este id en el html (en el primer <div> debajo del form)*/
+#carta{
+  border-radius: 15px;  /*recuadro del formulario*/
+  background-color: #dceafc; /*color de fondo del recuadro*/
+  
+}
+
+body{
+   background-image: url(../imagen/fondo.svg);
+    background-repeat:no-repeat;
+    background-position-x:center;
+    font-size: 14px;
+}
+
+
+.bt_registrar{
+    margin-top: 60px;
+    
+}
+
+.Contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.elementosNav{
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+    color: #37474f;
+    font-weight: 700;
+}
+
+.elementos{
+    margin-right: 50px;
+}
+
+.containerImg{
+    width: 20%;
+}
+
+.logo{
+    width: 40%;
+    margin: auto;
+}
+
+
+.mensajeExito{
+    width: 20%;
+    margin: auto;
+    text-align: center;
+}
+
+.mensajeError{
+    width: 20%;
+    margin: auto;
+    text-align: center;
+}
+
+.formulario{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.divVolver{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.botonVolver{
+    width: 70%;
+}
+
+.botones{
+    box-shadow: 0px 2px 16px 4px rgba(0,0,0,0.36);
+    -webkit-box-shadow: 0px 2px 16px 4px rgba(0,0,0,0.36);
+    -moz-box-shadow: 0px 2px 16px 4px rgba(0,0,0,0.36);
+}
+
+.botones:active{
+    box-shadow: none;
+}
+
+.containerFooter{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

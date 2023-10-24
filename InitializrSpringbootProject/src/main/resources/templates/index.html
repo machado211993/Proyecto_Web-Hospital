@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css}" rel="stylesheet"
+              integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link rel="shortcut icon" th:href="@{https://cdn3.iconfinder.com/data/icons/diversity-avatars/64/surgeon-woman-white-256.png}">
+
+        <link th:href="@{https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,500;0,600;1,200&display=swap}"
+              rel="stylesheet">
+
+        <!-- Compiled and minified Bootstrap CSS -->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <!-- Minified JS library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Compiled and minified Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+        <title>Index</title>
+        <link rel="stylesheet" th:href="@{/css/index.css}">
+        <link th:href="@{/css/footer.css}" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+
+        <section class="header">
+            <nav th:replace= "/fragments/navbar :: nav"></nav>
+        </section>
+
+        <main>
+            <header>
+                <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="/imagen/carousel2.jpeg" 
+                                         >
+                                    <div class="carousel-caption">
+                                        <h2 style="color: #269abc"></h2>
+
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="/imagen/carousel1.jpg"  
+                                         >
+                                    <div class="carousel-caption">
+                                        <h2 style="color: #269abc"></h2>
+
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <img src="/imagen/carousel3.jpeg"  
+                                         >
+                                    <div class="carousel-caption">
+                                        <h2 style="color: #269abc"></h2>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+            </header>
+
+            <div class="cuerpo">
+                <div class="row">
+                   <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                        <img class="img-responsive" th:src="@{/imagen/fondoIndex-remove.png}">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="header_content h-100">
+                            <br>
+                            <div class="header_tit">
+                                <h1 class="title" style="color: #269abc" >¡Bienvenidos a nuestra plataforma de servicios de salud! <span class="title-style"></span>
+                                </h1>
+                                <p id="parrafo">¡Regístrate ahora mismo y comienza a disfrutar de los beneficios de nuestra plataforma
+                                    de servicios de salud! Estamos aquí para brindarte una atención médica de calidad y facilitar
+                                    tu camino hacia una vida más saludable.</p>
+                            </div>
+                            <div class="head-bot">
+                                <br>
+                                <br>
+                                <div class="mx-auto">
+                                    <a type="button" class="header_button btn btn-primary btn-lg" th:href="@{/login}">Ingresar</a>   
+                                </div>
+                                <div class="mx-auto mt-3">
+                                    <span>Si eres nuevo usuario <a th:href="@{/paciente/registro}">regístrate
+                                            aquí</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </main>
+
+        <div class="container footer">
+            <footer th:replace="/fragments/footer :: footer"></footer>
+        </div>
+
+        <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>   
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>         
+
+</html>

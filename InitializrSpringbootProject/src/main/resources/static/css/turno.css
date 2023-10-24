@@ -1,0 +1,326 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.header{
+    height: 100px;
+}
+
+.header li{
+    font-size: 18px;
+    text-shadow: 1px 1px 0.5px white;
+    color: white;
+}
+
+.footer{
+    height: 100px;
+}
+
+.footer li{
+    font-size: 13px;
+    text-shadow: 1px 1px 0.5px white;
+    color: white;
+}
+
+main{
+    width: 100vw;
+    min-height: calc(100vh - (100px + 100px));
+    display: flex;
+    flex-direction: column;
+
+}
+
+body {
+    width: 100vw;
+    font-size: 14px;
+    background-image: url(../imagen/fondo.svg);
+    background-repeat:no-repeat;
+    background-position-x:center;
+}
+
+.conte_turno {
+    margin: auto;
+    width: 650px;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: #dceafc;
+    box-shadow: 10px 10px 15px black;
+}
+
+
+.conte_dtsTurno{
+    display: flex;
+    flex-direction: column;
+}
+
+.conte_dtsTurno label{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.conte_dtsTurno input{
+    text-align: center;
+    margin: auto;
+}
+
+.cont-eliTurno{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo_eliTurno label{
+    margin-top: 20px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo_eliTurno input{
+    font-size: 14px;
+    text-align: center;
+}
+
+.header_turnero {
+    width: 95%;
+    height: 100px;
+    margin: auto;
+    display: flex;
+}
+
+.inf-pac{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.inf-pac input{
+    font-size: 35px;
+    background-color: transparent;
+}
+
+.inf-med input{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+}
+
+.inf-med{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.input_inf-os{
+    text-align: center;
+}
+
+.input_inf-na{
+    text-align: center;
+}
+
+
+.titulo_turnero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.dtos_paciente{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dtos_paciente input{
+    height: 25x;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+}
+
+
+.inf-pac input{
+    font-size: 18px;
+    width: 600px;
+}
+
+.input_Ape {
+    text-align: center;
+    background: transparent;
+    width: 600px;
+    font-size: 35px;
+}
+
+.input_obr{
+    text-align: center;
+    background: transparent;
+}
+
+.body_turnero {
+    width: 100%;
+    padding: 5px;
+}
+
+.body_turnero form{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.datos_Prof {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.datos_Prof input{
+    background-color: lightskyblue;
+}
+
+.input_Id-Pro{
+    margin-top: 10px;
+}
+
+.input_NomyApe-Pro{
+    margin-top: 10px;
+}
+
+.input_Ape-Pro{
+    margin-top: 10px;
+}
+
+.input_Nom-Pro{
+    margin-top: 1px;
+}
+
+.input_Mes_Con{
+    display: flex;
+    flex-direction: column;
+    margin-top: 6px;
+}
+
+.input_dia_Con{
+    display: flex;
+    flex-direction: column;
+    margin-top: 6px;
+}
+
+.input_hor_Con{
+    display: flex;
+    flex-direction: column;
+    margin-top: 6px;
+}
+
+.datos_Prof div{
+    width: 100%;
+    margin-left: 2px;
+}
+
+.datos_btn {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 75% 25%;
+    padding: 5px;
+}
+
+.datos_fyh {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+}
+
+.datos_fyh label{
+    width: 90%;
+    text-align: start;
+    padding-top: 5px;
+    padding-left: 13px;
+}
+
+.datos_fyh textarea{
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.btn_buttom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_buttom button {
+    width: 65%;
+    margin-top: 15px;
+    height: 35px;
+    background-color: #005187;
+    color: white;
+}
+
+.btn_buttom p {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+input[type="date"].no-permitido {
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+}
+
+.boton{
+    margin-bottom: 10px;
+
+}
+
+.boton button{
+    width: 250px;;
+}
+
+
+.boton-v button{
+    width: 150px;;
+}
+
+.input_dia_Con li{
+    margin-left: 20px;
+}
+
+.tb-usuario{
+    width: 95%;
+    height: auto;
+    margin: auto;
+    background-color: lightblue;
+    box-shadow: 10px 10px 15px black;
+}
+
+tbody td{
+    font-size: 13px;
+} 
+
+#columna-turno{
+    width: 50px;
+}

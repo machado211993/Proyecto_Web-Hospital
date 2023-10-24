@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head>
+        <title>Tus consultas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="/css/calificacion.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/footer.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+        <section class="header">
+            <nav th:replace= "/fragments/navbar :: nav"></nav>
+        </section>
+
+        <main>
+            <div class="hed-calificacion">
+                <div class="text-titulos">
+                    <h2>Califique al profesional</h2>
+                    <!--                    <h3>Recuerde que sólo podrá hacerlo una vez finalizada su consulta.</h3>-->
+                </div>
+                <div class="card-contenedor text-center">
+                    <h5>Detalles de su turno</h5>
+                    <div class="card mb-3 text-center" style="max-width: 25rem; margin: 0 20px; background-color: #98c0f6;">
+                        <div class="card-header" 
+                             style=" background-color: #98c0f6;"  th:each ="turno : ${turno}" 
+                             th:text="${'Consulta de ' + turno.profesional.especialidad}"></div>
+                        <div class="card-body">
+                            <h5 class="card-title"
+                                style=" background-color: #98c0f6;"th:text="${turno.fecha + ' a las ' + turno.horario+':00'}"></h5>
+                            <p class="card-text" 
+                               style=" background-color: #98c0f6;"th:text="${'En ' + turno.profesional.nombreEstablecimiento}"></p>
+                            <p class="card-text" 
+                               style=" background-color: #98c0f6;"
+                               th:text="${'Con '+ turno.profesional.nombre + ' ' + turno.profesional.apellido}"></p>
+                            <p class="card-text" th:text="${'$' + turno.profesional.precio}"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-star ">
+                    <form class="formulario"
+                          th:action="@{/turno/calificado/__${turno.id}__}" method="POST"
+                          enctype="multipart/form-data">
+                        <div class="rating">
+                            <input type="radio" name="calificacion" th:value="${5}"/>
+                            <input type="radio" name="calificacion" th:value="${4}"/>
+                            <input type="radio" name="calificacion" th:value="${3}" />
+                            <input type="radio" name="calificacion" th:value="${2}" />
+                            <input type="radio" name="calificacion" th:value="${1}"/>
+                        </div>
+                        <div class="btn-calificar">
+                            <input type="submit" 
+                                   th:value="Calificar"
+                                   class="btn btn-primary"
+                                   th:if="${turno.calificacion == null}"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <div class="container footer">
+            <footer th:replace= "/fragments/footer :: footer"></footer>
+        </div>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+        <script src="https://kit.fontawesome.com/81877e47c2.js" crossorigin="anonymous"></script>
+
+    </body>
+
+
+</html>

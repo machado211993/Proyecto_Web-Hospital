@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.com.serviciosalud.demo.controladores">
+  <ClassDiagramComponents>
+    <Class name="AdminControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="profesionalServicio" type="ProfesionalServicio" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="panelAdminstrativo" returnType="String" visibility="public"/>
+        <Method name="registrarProfesional" returnType="String" visibility="public"/>
+        <Method name="registroProfesional" returnType="String" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="Long" name="matricula"/>
+          <Argument type="String" name="especialidad"/>
+          <Argument type="String" name="modalidad"/>
+          <Argument type="Double" name="precio"/>
+          <Argument type="String" name="inicioDia"/>
+          <Argument type="String" name="finDia"/>
+          <Argument type="String" name="inicioHora"/>
+          <Argument type="String" name="finHora"/>
+          <Argument type="Double" name="calificacion"/>
+          <Argument type="String" name="localidad"/>
+          <Argument type="String" name="obraSocial"/>
+          <Argument type="Long" name="telefonoLaboral"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="String" name="nombreEstablecimiento"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ErroresControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="20.0" yPosition="223.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="renderErrorPage" returnType="ModelAndView" visibility="public">
+          <Argument type="HttpServletRequest" name="httpRequest"/>
+        </Method>
+        <Method name="getErrorCode" returnType="int" visibility="private">
+          <Argument type="HttpServletRequest" name="httpRequest"/>
+        </Method>
+        <Method name="getErrorPath" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HistoriaClinicaControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="456.0" yPosition="304.0">
+      <Fields>
+        <Field name="turnoRepositorio" type="TurnoRepositorio" visibility="package"/>
+        <Field name="historiaClinicaServicio" type="HistoriaClinicaServicio" visibility="package"/>
+        <Field name="usuarioRepositorio" type="UsuarioRepositorio" visibility="package"/>
+        <Field name="historiaClinicaRepositorio" type="HistoriaClinicaRepositorio" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="registrar" returnType="String" visibility="public">
+          <Argument type="String" name="idTurno"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="registro" returnType="String" visibility="public">
+          <Argument type="String" name="idTurno"/>
+          <Argument type="String" name="observaciones"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="listar" returnType="String" visibility="public">
+          <Argument type="String" name="idPaciente"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ImagenControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="pacienteServicio" type="PacienteServicio" visibility="package"/>
+        <Field name="profesionalServicio" type="ProfesionalServicio" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="imagenUsuario" returnType="ResponseEntity&lt;byte[]&gt;" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="imagenPaciente" returnType="ResponseEntity&lt;byte[]&gt;" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="imagenProfesional" returnType="ResponseEntity&lt;byte[]&gt;" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PacienteResControler" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="pacienteServicio" type="PacienteServicio" visibility="package"/>
+        <Field name="turnoRepositorio" type="TurnoRepositorio" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="registrar" returnType="String" visibility="public"/>
+        <Method name="registrarUsuario" returnType="String" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="String" name="obraSocialPaciente"/>
+          <Argument type="Integer" name="numeroDeAfiliado"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="listar" returnType="String" visibility="public">
+          <Argument type="ModelMap" name="modelo"/>
+          <Argument type="HttpSession" name="session"/>
+        </Method>
+        <Method name="modificar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="modificarUsuario" returnType="String" visibility="public">
+          <Argument type="String" name="idPaciente"/>
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="String" name="obraSocialPaciente"/>
+          <Argument type="Integer" name="numeroDeAfiliado"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="listarMisTurno" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="eliminar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="eliminado" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="listarPacientes" returnType="ResponseEntity&lt;List&lt;Paciente&gt;&gt;" visibility="public"/>
+        <Method name="listaPacientes" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PortalControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="index" returnType="String" visibility="public"/>
+        <Method name="login" returnType="String" visibility="public">
+          <Argument type="String" name="error"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="inicio" returnType="String" visibility="public">
+          <Argument type="HttpSession" name="session"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ProfesionalControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="profesionalServicio" type="ProfesionalServicio" visibility="package"/>
+        <Field name="usuarioRepositorio" type="UsuarioRepositorio" visibility="package"/>
+        <Field name="profesionalRepositorio" type="ProfesionalRepositorio" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="modificar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="modificado" returnType="String" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="String" name="idProfesional"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="Long" name="matricula"/>
+          <Argument type="String" name="especialidad"/>
+          <Argument type="String" name="modalidad"/>
+          <Argument type="Double" name="precio"/>
+          <Argument type="String" name="inicioDia"/>
+          <Argument type="String" name="finDia"/>
+          <Argument type="String" name="inicioHora"/>
+          <Argument type="String" name="finHora"/>
+          <Argument type="Double" name="calificacion"/>
+          <Argument type="String" name="localidad"/>
+          <Argument type="String" name="obraSocial"/>
+          <Argument type="Long" name="telefonoLaboral"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="String" name="nombreEstablecimiento"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="listar" returnType="String" visibility="public">
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="filtraPorEspecialidad" returnType="String" visibility="public">
+          <Argument type="ModelMap" name="modelo"/>
+          <Argument type="String" name="palabraEspecialidad"/>
+          <Argument type="String" name="palabraFiltro"/>
+        </Method>
+        <Method name="eliminar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="eliminado" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="traducirDia" returnType="String" visibility="public">
+          <Argument type="String" name="dia"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TurnoControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="profesionalServicio" type="ProfesionalServicio" visibility="package"/>
+        <Field name="turnoServicio" type="TurnoServicio" visibility="package"/>
+        <Field name="turnoRepositorio" type="TurnoRepositorio" visibility="package"/>
+        <Field name="pacienteRepositorio" type="PacienteRepositorio" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="registrarTurno" returnType="String" visibility="public">
+          <Argument type="String" name="idProfesional"/>
+          <Argument type="ModelMap" name="modelo"/>
+          <Argument type="HttpSession" name="session"/>
+        </Method>
+        <Method name="listaHoras" returnType="List&lt;String&gt;" visibility="public">
+          <Argument type="String" name="inicioHora"/>
+          <Argument type="String" name="finHora"/>
+        </Method>
+        <Method name="listaDias" returnType="List&lt;String&gt;" visibility="public">
+          <Argument type="Profesional" name="profesional"/>
+        </Method>
+        <Method name="registro" returnType="String" visibility="public">
+          <Argument type="String" name="idProfesional"/>
+          <Argument type="String" name="idPaciente"/>
+          <Argument type="String" name="mes"/>
+          <Argument type="String" name="dia"/>
+          <Argument type="Date" name="fecha2"/>
+          <Argument type="String" name="hora"/>
+          <Argument type="String" name="motivoConsulta"/>
+          <Argument type="ModelMap" name="modelo"/>
+          <Argument type="String" name="error"/>
+        </Method>
+        <Method name="modificar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="modificado" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="idProfesional"/>
+          <Argument type="String" name="idPaciente"/>
+          <Argument type="String" name="mes"/>
+          <Argument type="String" name="dia"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="hora"/>
+          <Argument type="String" name="motivoConsulta"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="listar" returnType="String" visibility="public">
+          <Argument type="ModelMap" name="modelo"/>
+          <Argument type="HttpSession" name="session"/>
+        </Method>
+        <Method name="filtraPorEspecialidad" returnType="String" visibility="public">
+          <Argument type="ModelMap" name="modelo"/>
+          <Argument type="String" name="palabraClave"/>
+          <Argument type="String" name="idProfesional"/>
+        </Method>
+        <Method name="eliminar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="eliminado" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="calificar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="guardarCalificacion" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="int" name="calificacion"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

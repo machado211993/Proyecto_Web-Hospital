@@ -1,0 +1,165 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 2 jun 2023, 04:48:24
+    Author     : manue
+*/
+
+body{ /*imagen azul de fondo*/
+    /*background-image: url(../imagen/fondo.svg);*/
+    background-repeat:no-repeat;
+    background-position-x:center;
+}
+main{
+    min-height: calc(100vh-200px);
+}
+
+html{
+    width: 100vw;
+    height: 100vh;
+}
+
+.header{
+    height: 70px;
+    
+}
+
+.header li{
+    font-size: 18px;
+    text-shadow: 1px 1px 0.5px white;
+}
+
+.footer li{
+    font-size: 13px;
+    text-shadow: 1px 1px 0.5px white;
+    color: white;
+}
+.footer{
+    width: 100vw;
+    height: 100px;
+    margin-top: 10px
+}
+
+.header img{
+    visibility: hidden;
+    z-index: -1;
+}
+
+.texto-bienvenida{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.parrafo-admin{
+    text-align: justify;
+    margin-top: 40px;
+}
+
+.grupo-botones{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 50px;
+    gap: 100px;
+}
+
+.grupo-botones a{
+    color: white;
+}
+
+.carousel-inner{
+    height: 50%;
+    width: 100%;
+}
+
+.texto-bienvenida{
+    width: 90%;
+    font-size: 30px;
+    text-justify: auto;
+}
+
+.parrafo-admin{
+    font-size: 50px;
+    width: 90%;
+    text-justify: auto;
+}
+
+.paciente{
+    border: 1px solid black;
+    width: 250px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 6px 6px 12px black;
+    background-color: #98c0f6;
+    color:black;
+}
+
+.paciente img{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    translate: 0px 20px;
+}
+
+.profesional{
+    border: 1px solid black;
+    width: 250px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 6px 6px 12px black;
+    background-color: #98c0f6;
+    color:black;
+}
+
+.profesional img{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    translate: 0px 20px;
+}
+
+.turno{
+    border: 1px solid black;
+    width: 250px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 6px 6px 12px black;
+    background-color: #98c0f6;
+    color:black;
+}
+
+.turno img{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    translate: 0px 20px;
+}
+/*tamaño a la imagen */
+.carousel-inner img {
+    width: 100vw;
+    max-height: 300px; /*altura imagen*/
+}
+/*tamaño carousel */
+.carousel-inner{
+ height: 300px; /*altura carousel*/
+}

@@ -1,0 +1,156 @@
+/*etiqueta form*/
+form{
+    width: 80%; /*ancho*/  
+    margin: 0 auto; /*centrado*/
+    padding: 10px;
+
+}
+/*agregue este id en el html (en el primer <div> debajo del form)*/
+#carta{
+  border-radius: 15px;  /*recuadro del formulario*/
+  background-color: #dceafc; /*color de fondo del recuadro*/
+  width: 100%;
+  
+}
+body{
+   background-image: url(../imagen/fondo.svg);
+    background-repeat:no-repeat;
+    background-position-x:center;
+    font-size: 14px;
+}
+
+
+html{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.header{
+    height: 100px;
+}
+
+.header li{
+    font-size: 18px;
+    text-shadow: 1px 1px 0.5px white;
+    color: white;
+}
+
+
+.footer li{
+    font-size: 13px;
+    text-shadow: 1px 1px 0.5px white;
+    color: white;
+}
+.footer{
+    width: 100vw;
+    height: 100px;
+    margin-top: 10px
+}
+
+/*  Estilo de Caja Footer */
+
+.cont-footer{
+    gap:30px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+/*  Estilo de Caja Footer */
+
+.text-footer{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.text-footer p{
+    margin:auto;
+}
+
+.footer{
+    /*    background-color: lavenderblush;*/
+}
+
+/*  Estilo de Caja de Iconos */
+
+.redes{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+/*  Estilo de Iconos del Footer */
+
+.red-social{
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.red-social a {
+    color: black;
+    text-decoration: none;
+    filter: drop-shadow(3px 3px 3px rgb(11, 6, 78));
+
+}
+
+.fa-facebook:hover {
+    transform: scale(1.75);
+    transition: 0.6s;
+    color: #0044ff;
+}
+
+.fa-twitter:hover {
+    transform: scale(2);
+    transition: 0.6s;
+    color: #0044ff;
+}
+
+.fa-youtube:hover {
+    transform: scale(2);
+    transition: 0.6s;
+    color: #ff0000;
+}
+
+.fa-instagram:hover {
+    transform: scale(2);
+    transition: 0.6s;
+    color: #d8942f;
+}
+
+.fila{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.conten-botones{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.botones-r{
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.botones-r button{
+    width: 450px;
+}
+
+.botones-v{
+    margin: auto;
+}
+
+.botones-v a{
+    width: 300px;
+}
+#colorformulario{
+    background-color: #5bc0de;
+}

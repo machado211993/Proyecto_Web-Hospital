@@ -1,0 +1,84 @@
+<div th:fragment="nav">
+    <nav class="navbar navbar-expand-md navbar-light m-0 p-0 " >
+      <div class="container-fluid imagen">
+            <a class="navbar-brand" href="/">
+                <img class="img-responsive mx-4" th:src="@{/imagen/logo-sinfondo.png}" width="100" height="80" alt="logo nav">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse d-flex justify-content-center mx-5" id="navbarNav">
+
+            <ul class="navbar-nav">
+                <li class="nav-item px-3">
+                    <a class="nav-link"  th:if="${session.usuariosession != null}" aria-current="page" th:href="@{/inicio}">Inicio</a>
+                </li>
+
+                <li class="nav-item px-3">
+                    <a class="nav-link"  th:if="${session.usuariosession != null}" th:href="@{/paciente/listar}" sec:authorize="hasAnyRole('PROFESIONAL', 'ROLE_ADMIN')">Pacientes</a>
+                </li>                            
+
+                <li class="nav-item px-3">
+                    <a class="nav-link"  th:if="${session.usuariosession != null}" th:href="@{/profesional/listar}" sec:authorize="hasAnyRole('PACIENTE', 'ROLE_ADMIN')">Profesionales</a>
+                </li>
+
+                <li class="nav-item px-3">
+                    <a class="nav-link"  th:if="${session.usuariosession != null}" th:href="@{/turno/listar}" sec:authorize="hasAnyRole('PROFESIONAL', 'ADMIN')">Turnos</a>
+                </li>                            
+
+                <li class="nav-item px-3">
+                    <a class="nav-link"  th:if="${session.usuariosession != null}" th:href="@{/paciente/turnos/__${session.usuariosession.id}__}" sec:authorize="hasRole('PACIENTE')">Turnos</a>
+                </li>
+                <!--
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" th:if="${session.usuariosession != null}" th:href="@{#}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Más
+                                </a>
+                
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" >Contacto</a>
+                                    <a class="dropdown-item" >Nosotros</a>
+                                    <a class="dropdown-item" >Preguntas frecuentes</a>
+                                </div>
+                            </li>
+                -->
+                <li class="nav-item dropdown px-3">
+                    <a class="nav-link dropdown-toggle" th:if="${session.usuariosession != null}" th:href="@{#}" sec:authorize="hasRole('ADMIN')" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ADMIN
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item w-auto" th:href="@{/admin/registrar-profesional}" style='font-size: 13px;'>Crear Profesional</a>
+                        <a class="dropdown-item w-auto" th:href="@{/profesional/listar}" style='font-size: 13px; background: transparent;'>Eliminar Profesional</a>
+
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown px-3">
+                    <a class="nav-link dropdown-toggle" th:if="${session.usuariosession != null}" th:href="@{#}"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Perfil
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item w-auto" th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('PROFESIONAL')" th:href="@{/profesional/modificar/__${session.usuariosession.id}__}">Editar</a>
+                        <a class="dropdown-item w-auto" th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('PACIENTE')" th:href="@{/paciente/modificar/__${session.usuariosession.id}__}">Editar</a>
+                        <a class="dropdown-item w-auto" th:href="@{/logout}" style='font-size: 13px; background: transparent;' >Cerrar Sesión</a>
+                    </div>
+                </li>
+
+                <li class="nav-item px-3">
+                    <a class="nav-link " th:if="${session.usuariosession == null}"  th:href="@{/paciente/registro}" id="navbarDropdown" role="button" aria-expanded="false">
+                        Registrarse
+                    </a>
+
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link " th:if="${session.usuariosession == null}" th:href="@{/login}" id="navbarDropdown" role="button" aria-expanded="false">
+                        Ingresar
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+</div>

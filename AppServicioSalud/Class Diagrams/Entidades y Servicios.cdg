@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.com.serviciosalud.demo">
+  <ClassDiagramComponents>
+    <Class name="AppSaludProyectoFinalApplication" package="com.serviciosalud.demo" visibility="public" xPosition="4966.0" yPosition="1788.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AdminControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="2908.0" yPosition="2923.0">
+      <Fields>
+        <Field name="profesionalServicio" type="ProfesionalServicio" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="panelAdminstrativo" returnType="String" visibility="public"/>
+        <Method name="registrarProfesional" returnType="String" visibility="public"/>
+        <Method name="registroProfesional" returnType="String" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="Long" name="matricula"/>
+          <Argument type="String" name="especialidad"/>
+          <Argument type="String" name="modalidad"/>
+          <Argument type="Double" name="precio"/>
+          <Argument type="String" name="inicioDia"/>
+          <Argument type="String" name="finDia"/>
+          <Argument type="String" name="inicioHora"/>
+          <Argument type="String" name="finHora"/>
+          <Argument type="Double" name="calificacion"/>
+          <Argument type="String" name="localidad"/>
+          <Argument type="String" name="obraSocial"/>
+          <Argument type="Long" name="telefonoLaboral"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="String" name="nombreEstablecimiento"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ErroresControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="4966.0" yPosition="2237.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="renderErrorPage" returnType="ModelAndView" visibility="public">
+          <Argument type="HttpServletRequest" name="httpRequest"/>
+        </Method>
+        <Method name="getErrorCode" returnType="int" visibility="private">
+          <Argument type="HttpServletRequest" name="httpRequest"/>
+        </Method>
+        <Method name="getErrorPath" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HistoriaClinicaControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="511.0" yPosition="23.0">
+      <Fields>
+        <Field name="turnoRepositorio" type="TurnoRepositorio" visibility="package"/>
+        <Field name="historiaClinicaServicio" type="HistoriaClinicaServicio" visibility="package"/>
+        <Field name="usuarioRepositorio" type="UsuarioRepositorio" visibility="package"/>
+        <Field name="historiaClinicaRepositorio" type="HistoriaClinicaRepositorio" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="registrar" returnType="String" visibility="public">
+          <Argument type="String" name="idTurno"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="registro" returnType="String" visibility="public">
+          <Argument type="String" name="idTurno"/>
+          <Argument type="String" name="observaciones"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="listar" returnType="String" visibility="public">
+          <Argument type="String" name="idPaciente"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ImagenControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="2744.0" yPosition="1033.0">
+      <Fields>
+        <Field name="pacienteServicio" type="PacienteServicio" visibility="package"/>
+        <Field name="profesionalServicio" type="ProfesionalServicio" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="imagenUsuario" returnType="ResponseEntity&lt;byte[]&gt;" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="imagenPaciente" returnType="ResponseEntity&lt;byte[]&gt;" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="imagenProfesional" returnType="ResponseEntity&lt;byte[]&gt;" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PacienteResControler" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="3604.0" yPosition="39.0">
+      <Fields>
+        <Field name="pacienteServicio" type="PacienteServicio" visibility="package"/>
+        <Field name="turnoRepositorio" type="TurnoRepositorio" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="registrar" returnType="String" visibility="public"/>
+        <Method name="registrarUsuario" returnType="String" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="String" name="obraSocialPaciente"/>
+          <Argument type="Integer" name="numeroDeAfiliado"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="listar" returnType="String" visibility="public">
+          <Argument type="ModelMap" name="modelo"/>
+          <Argument type="HttpSession" name="session"/>
+        </Method>
+        <Method name="modificar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="modificarUsuario" returnType="String" visibility="public">
+          <Argument type="String" name="idPaciente"/>
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="String" name="obraSocialPaciente"/>
+          <Argument type="Integer" name="numeroDeAfiliado"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="listarMisTurno" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="eliminar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="eliminado" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="listarPacientes" returnType="ResponseEntity&lt;List&lt;Paciente&gt;&gt;" visibility="public"/>
+        <Method name="listaPacientes" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PortalControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="4966.0" yPosition="1997.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="index" returnType="String" visibility="public"/>
+        <Method name="login" returnType="String" visibility="public">
+          <Argument type="String" name="error"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="inicio" returnType="String" visibility="public">
+          <Argument type="HttpSession" name="session"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ProfesionalControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="20.0" yPosition="2923.0">
+      <Fields>
+        <Field name="profesionalServicio" type="ProfesionalServicio" visibility="package"/>
+        <Field name="usuarioRepositorio" type="UsuarioRepositorio" visibility="package"/>
+        <Field name="profesionalRepositorio" type="ProfesionalRepositorio" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="modificar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="modificado" returnType="String" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="String" name="idProfesional"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="Long" name="matricula"/>
+          <Argument type="String" name="especialidad"/>
+          <Argument type="String" name="modalidad"/>
+          <Argument type="Double" name="precio"/>
+          <Argument type="String" name="inicioDia"/>
+          <Argument type="String" name="finDia"/>
+          <Argument type="String" name="inicioHora"/>
+          <Argument type="String" name="finHora"/>
+          <Argument type="Double" name="calificacion"/>
+          <Argument type="String" name="localidad"/>
+          <Argument type="String" name="obraSocial"/>
+          <Argument type="Long" name="telefonoLaboral"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="String" name="nombreEstablecimiento"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="listar" returnType="String" visibility="public">
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="filtraPorEspecialidad" returnType="String" visibility="public">
+          <Argument type="ModelMap" name="modelo"/>
+          <Argument type="String" name="palabraEspecialidad"/>
+          <Argument type="String" name="palabraFiltro"/>
+        </Method>
+        <Method name="eliminar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="eliminado" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="traducirDia" returnType="String" visibility="public">
+          <Argument type="String" name="dia"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TurnoControlador" package="com.serviciosalud.demo.controladores" visibility="public" xPosition="605.0" yPosition="2275.0">
+      <Fields>
+        <Field name="profesionalServicio" type="ProfesionalServicio" visibility="package"/>
+        <Field name="turnoServicio" type="TurnoServicio" visibility="package"/>
+        <Field name="turnoRepositorio" type="TurnoRepositorio" visibility="package"/>
+        <Field name="pacienteRepositorio" type="PacienteRepositorio" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="registrarTurno" returnType="String" visibility="public">
+          <Argument type="String" name="idProfesional"/>
+          <Argument type="ModelMap" name="modelo"/>
+          <Argument type="HttpSession" name="session"/>
+        </Method>
+        <Method name="listaHoras" returnType="List&lt;String&gt;" visibility="public">
+          <Argument type="String" name="inicioHora"/>
+          <Argument type="String" name="finHora"/>
+        </Method>
+        <Method name="listaDias" returnType="List&lt;String&gt;" visibility="public">
+          <Argument type="Profesional" name="profesional"/>
+        </Method>
+        <Method name="registro" returnType="String" visibility="public">
+          <Argument type="String" name="idProfesional"/>
+          <Argument type="String" name="idPaciente"/>
+          <Argument type="String" name="mes"/>
+          <Argument type="String" name="dia"/>
+          <Argument type="Date" name="fecha2"/>
+          <Argument type="String" name="hora"/>
+          <Argument type="String" name="motivoConsulta"/>
+          <Argument type="ModelMap" name="modelo"/>
+          <Argument type="String" name="error"/>
+        </Method>
+        <Method name="modificar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="modificado" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="idProfesional"/>
+          <Argument type="String" name="idPaciente"/>
+          <Argument type="String" name="mes"/>
+          <Argument type="String" name="dia"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="hora"/>
+          <Argument type="String" name="motivoConsulta"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="listar" returnType="String" visibility="public">
+          <Argument type="ModelMap" name="modelo"/>
+          <Argument type="HttpSession" name="session"/>
+        </Method>
+        <Method name="filtraPorEspecialidad" returnType="String" visibility="public">
+          <Argument type="ModelMap" name="modelo"/>
+          <Argument type="String" name="palabraClave"/>
+          <Argument type="String" name="idProfesional"/>
+        </Method>
+        <Method name="eliminar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="eliminado" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="calificar" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="ModelMap" name="modelo"/>
+        </Method>
+        <Method name="guardarCalificacion" returnType="String" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="int" name="calificacion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="HistoriaClinica" package="com.serviciosalud.demo.entidades" visibility="public" xPosition="489.0" yPosition="950.0">
+      <Fields>
+        <Field name="id" type="String" visibility="protected"/>
+        <Field name="turnos" type="List&lt;Turno&gt;" visibility="protected"/>
+        <Field name="paciente" type="Paciente" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Imagen" package="com.serviciosalud.demo.entidades" visibility="public" xPosition="2763.0" yPosition="733.0">
+      <Fields>
+        <Field name="id" type="String" visibility="private"/>
+        <Field name="mime" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="contenido" type="byte[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Paciente" package="com.serviciosalud.demo.entidades" visibility="public" xPosition="1262.0" yPosition="192.0">
+      <Fields>
+        <Field name="obraSocialPaciente" type="String" visibility="private"/>
+        <Field name="numeroDeAfiliado" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Profesional" package="com.serviciosalud.demo.entidades" visibility="public" xPosition="1839.0" yPosition="539.0">
+      <Fields>
+        <Field name="matricula" type="Long" visibility="private"/>
+        <Field name="especialidad" type="Especialidad" visibility="private"/>
+        <Field name="modalidad" type="Modalidad" visibility="private"/>
+        <Field name="precio" type="Double" visibility="private"/>
+        <Field name="calificacion" type="Double" visibility="private"/>
+        <Field name="localidad" type="String" visibility="private"/>
+        <Field name="obraSocial" type="String" visibility="private"/>
+        <Field name="telefonoLaboral" type="Long" visibility="private"/>
+        <Field name="descripcion" type="String" visibility="private"/>
+        <Field name="nombreEstablecimiento" type="String" visibility="private"/>
+        <Field name="disponibilidadInicioDia" type="String" visibility="private"/>
+        <Field name="disponibilidadFinDia" type="String" visibility="private"/>
+        <Field name="disponibilidadInicioHora" type="String" visibility="private"/>
+        <Field name="disponibilidadFinHora" type="String" visibility="private"/>
+        <Field name="activo" type="Boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Turno" package="com.serviciosalud.demo.entidades" visibility="public" xPosition="489.0" yPosition="1762.0">
+      <Fields>
+        <Field name="id" type="String" visibility="protected"/>
+        <Field name="estado" type="Estado" visibility="protected"/>
+        <Field name="fecha" type="String" visibility="protected"/>
+        <Field name="horario" type="String" visibility="protected"/>
+        <Field name="motivoDeConsulta" type="String" visibility="protected"/>
+        <Field name="observaciones" type="String" visibility="protected"/>
+        <Field name="paciente" type="Paciente" visibility="protected"/>
+        <Field name="profesional" type="Profesional" visibility="protected"/>
+        <Field name="calificacion" type="Integer" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Usuario" package="com.serviciosalud.demo.entidades" visibility="public" xPosition="2274.0" yPosition="239.0">
+      <Fields>
+        <Field name="id" type="String" visibility="protected"/>
+        <Field name="dni" type="Integer" visibility="protected"/>
+        <Field name="nombre" type="String" visibility="protected"/>
+        <Field name="apellido" type="String" visibility="protected"/>
+        <Field name="telefono" type="Integer" visibility="protected"/>
+        <Field name="email" type="String" visibility="protected"/>
+        <Field name="password" type="String" visibility="protected"/>
+        <Field name="fechaDeNacimiento" type="Date" visibility="protected"/>
+        <Field name="img" type="Imagen" visibility="protected"/>
+        <Field name="rol" type="Roles" visibility="protected"/>
+        <Field name="sexo" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="MiExcepcion" package="com.serviciosalud.demo.MiExcepcion" visibility="public" xPosition="4966.0" yPosition="2507.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="msg"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="SeguridadWeb" package="com.serviciosalud.demo" visibility="public" xPosition="4834.0" yPosition="1211.0">
+      <Fields>
+        <Field name="pacienteServicio" type="PacienteServicio" visibility="public"/>
+        <Field name="profesionalServicio" type="ProfesionalServicio" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="configureGlobalPaciente" returnType="void" visibility="public">
+          <Argument type="AuthenticationManagerBuilder" name="auth"/>
+        </Method>
+        <Method name="configureGlobalProfesional" returnType="void" visibility="public">
+          <Argument type="AuthenticationManagerBuilder" name="auth"/>
+        </Method>
+        <Method name="configure" returnType="void" visibility="protected">
+          <Argument type="HttpSecurity" name="http"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="HistoriaClinicaServicio" package="com.serviciosalud.demo.servicios" visibility="public" xPosition="20.0" yPosition="439.0">
+      <Fields>
+        <Field name="turnoRepositorio" type="TurnoRepositorio" visibility="package"/>
+        <Field name="historiaClinicaRepositorio" type="HistoriaClinicaRepositorio" visibility="package"/>
+        <Field name="usuarioRepositorio" type="UsuarioRepositorio" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="registrar" returnType="void" visibility="public">
+          <Argument type="String" name="idTurno"/>
+          <Argument type="String" name="observaciones"/>
+        </Method>
+        <Method name="buscarPorPaciente" returnType="HistoriaClinica" visibility="public">
+          <Argument type="Paciente" name="paciente"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ImagenServicio" package="com.serviciosalud.demo.servicios" visibility="public" xPosition="3604.0" yPosition="1408.0">
+      <Fields>
+        <Field name="imagenRepositorio" type="ImagenRepositorio" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="guardar" returnType="Imagen" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+        </Method>
+        <Method name="actualizar" returnType="Imagen" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="String" name="idImagen"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PacienteServicio" package="com.serviciosalud.demo.servicios" visibility="public" xPosition="3725.0" yPosition="647.0">
+      <Fields>
+        <Field name="pacienteRepositorio" type="PacienteRepositorio" visibility="private"/>
+        <Field name="usuarioRepositorio" type="UsuarioRepositorio" visibility="private"/>
+        <Field name="imagenServicio" type="ImagenServicio" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="registrar" returnType="void" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="String" name="obraSocialPaciente"/>
+          <Argument type="Integer" name="numeroDeAfiliado"/>
+        </Method>
+        <Method name="actualizar" returnType="void" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="idPaciente"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="String" name="obraSocialPaciente"/>
+          <Argument type="Integer" name="numeroDeAfiliado"/>
+        </Method>
+        <Method name="crearUsuariolisto" returnType="void" visibility="public"/>
+        <Method name="borrarPorId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getOne" returnType="Paciente" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="buscarPorDni" returnType="Paciente" visibility="public">
+          <Argument type="Integer" name="dni"/>
+        </Method>
+        <Method name="buscarPorEmail" returnType="Usuario" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="listaPacientes" returnType="List&lt;Paciente&gt;" visibility="public"/>
+        <Method name="validar" returnType="void" visibility="private">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="String" name="obraSocialPaciente"/>
+          <Argument type="Integer" name="numeroDeAfiliado"/>
+        </Method>
+        <Method name="loadUserByUsername" returnType="UserDetails" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ProfesionalServicio" package="com.serviciosalud.demo.servicios" visibility="public" xPosition="1950.0" yPosition="1847.0">
+      <Fields>
+        <Field name="profesionalRepositorio" type="ProfesionalRepositorio" visibility="private"/>
+        <Field name="usuarioRepositorio" type="UsuarioRepositorio" visibility="private"/>
+        <Field name="imagenServicio" type="ImagenServicio" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="registrar" returnType="void" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="Long" name="matricula"/>
+          <Argument type="String" name="especialidad"/>
+          <Argument type="String" name="modalidad"/>
+          <Argument type="Double" name="precio"/>
+          <Argument type="String" name="inicioDia"/>
+          <Argument type="String" name="finDia"/>
+          <Argument type="String" name="inicioHora"/>
+          <Argument type="String" name="finHora"/>
+          <Argument type="Double" name="calificacion"/>
+          <Argument type="String" name="localidad"/>
+          <Argument type="String" name="obraSocial"/>
+          <Argument type="Long" name="telefonoLaboral"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="String" name="nombreEstablecimiento"/>
+        </Method>
+        <Method name="actualizarProfesional" returnType="void" visibility="public">
+          <Argument type="MultipartFile" name="archivo"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="idProfesional"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="Long" name="matricula"/>
+          <Argument type="String" name="especialidad"/>
+          <Argument type="String" name="modalidad"/>
+          <Argument type="Double" name="precio"/>
+          <Argument type="String" name="inicioDia"/>
+          <Argument type="String" name="finDia"/>
+          <Argument type="String" name="inicioHora"/>
+          <Argument type="String" name="finHora"/>
+          <Argument type="Double" name="calificacion"/>
+          <Argument type="String" name="localidad"/>
+          <Argument type="String" name="obraSocial"/>
+          <Argument type="Long" name="telefonoLaboral"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="String" name="nombreEstablecimiento"/>
+          <Argument type="Boolean" name="activo"/>
+        </Method>
+        <Method name="borrarPorId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getOne" returnType="Profesional" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="buscarPorEspecialidad" returnType="List&lt;Profesional&gt;" visibility="public">
+          <Argument type="Especialidad" name="especialidad"/>
+        </Method>
+        <Method name="ordenarPorPrecioFiltro" returnType="List&lt;Profesional&gt;" visibility="public">
+          <Argument type="Especialidad" name="especialidad"/>
+        </Method>
+        <Method name="ordenarPorCalificacionFiltro" returnType="List&lt;Profesional&gt;" visibility="public">
+          <Argument type="Especialidad" name="especialidad"/>
+        </Method>
+        <Method name="ordenarPorPrecio" returnType="List&lt;Profesional&gt;" visibility="public"/>
+        <Method name="ordenarPorCalificacion" returnType="List&lt;Profesional&gt;" visibility="public"/>
+        <Method name="listaProfesinales" returnType="List&lt;Profesional&gt;" visibility="public"/>
+        <Method name="buscarPorEmail" returnType="Profesional" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="validar" returnType="void" visibility="private">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="String" name="email"/>
+          <Argument type="Integer" name="telefono"/>
+          <Argument type="String" name="sexo"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="password2"/>
+          <Argument type="Long" name="matricula"/>
+          <Argument type="String" name="especialidad"/>
+          <Argument type="Double" name="precio"/>
+          <Argument type="Double" name="calificacion"/>
+          <Argument type="String" name="localidad"/>
+          <Argument type="String" name="obraSocial"/>
+          <Argument type="Long" name="telefonoLaboral"/>
+          <Argument type="String" name="descripcion"/>
+          <Argument type="String" name="nombreEstablecimiento"/>
+        </Method>
+        <Method name="loadUserByUsername" returnType="UserDetails" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="promedioCalificacionPorProfesional" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="Integer" name="calificacion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TurnoServicio" package="com.serviciosalud.demo.servicios" visibility="public" xPosition="917.0" yPosition="1432.0">
+      <Fields>
+        <Field name="profesionalRepositorio" type="ProfesionalRepositorio" visibility="package"/>
+        <Field name="pacienteRepositorio" type="PacienteRepositorio" visibility="package"/>
+        <Field name="turnoRepositorio" type="TurnoRepositorio" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="registrar" returnType="void" visibility="public">
+          <Argument type="String" name="idPaciente"/>
+          <Argument type="String" name="idProfesional"/>
+          <Argument type="String" name="mes"/>
+          <Argument type="String" name="dia"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="hora"/>
+          <Argument type="String" name="motivoConsulta"/>
+        </Method>
+        <Method name="modificar" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="idPaciente"/>
+          <Argument type="String" name="idProfesional"/>
+          <Argument type="String" name="mes"/>
+          <Argument type="String" name="dia"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="hora"/>
+          <Argument type="String" name="motivoConsulta"/>
+        </Method>
+        <Method name="validarFecha2" returnType="LocalDate" visibility="public">
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="hora"/>
+          <Argument type="Profesional" name="profesional"/>
+        </Method>
+        <Method name="listarTurnos" returnType="List&lt;Turno&gt;" visibility="public"/>
+        <Method name="listarTurnosDeUnProfesional" returnType="List&lt;Turno&gt;" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="buscarTurnosDeHoy" returnType="List&lt;Turno&gt;" visibility="public">
+          <Argument type="String" name="idProfesional"/>
+        </Method>
+        <Method name="ordenarTurnosPorFecha" returnType="List&lt;Turno&gt;" visibility="public">
+          <Argument type="String" name="idProfesional"/>
+        </Method>
+        <Method name="ordenarTurnosPorPacientes" returnType="List&lt;Turno&gt;" visibility="public">
+          <Argument type="String" name="idProfesional"/>
+        </Method>
+        <Method name="buscarTurno" returnType="Turno" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="guardarCalificacion" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="Integer" name="calificacion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="HistoriaClinicaRepositorio" package="com.serviciosalud.demo.repositorios" visibility="public" xPosition="633.0" yPosition="521.0">
+      <Methods>
+        <Method name="buscarPorPaciente" returnType="Optional&lt;HistoriaClinica&gt;" visibility="public">
+          <Argument type="Paciente" name="Paciente"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="ImagenRepositorio" package="com.serviciosalud.demo.repositorios" visibility="public" xPosition="4347.0" yPosition="1336.0">
+      <Methods/>
+    </Interface>
+    <Interface name="PacienteRepositorio" package="com.serviciosalud.demo.repositorios" visibility="public" xPosition="2002.0" yPosition="1457.0">
+      <Methods>
+        <Method name="buscarPacientePorRol" returnType="List&lt;Paciente&gt;" visibility="public">
+          <Argument type="Roles" name="rol"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="ProfesionalRepositorio" package="com.serviciosalud.demo.repositorios" visibility="public" xPosition="1809.0" yPosition="2609.0">
+      <Methods/>
+    </Interface>
+    <Interface name="TurnoRepositorio" package="com.serviciosalud.demo.repositorios" visibility="public" xPosition="-95.0" yPosition="1132.0">
+      <Methods>
+        <Method name="buscarPorFecha" returnType="Optional&lt;List&lt;Turno&gt;&gt;" visibility="public">
+          <Argument type="String" name="fecha"/>
+        </Method>
+        <Method name="buscarPorPaciente" returnType="List&lt;Turno&gt;" visibility="public">
+          <Argument type="String" name="idPaciente"/>
+        </Method>
+        <Method name="buscarPorProfesional" returnType="List&lt;Turno&gt;" visibility="public">
+          <Argument type="String" name="idProfesional"/>
+        </Method>
+        <Method name="buscarTurnoDeHoy" returnType="Optional&lt;List&lt;Turno&gt;&gt;" visibility="public">
+          <Argument type="String" name="fechaHoy"/>
+          <Argument type="String" name="idProfesional"/>
+        </Method>
+        <Method name="ordenarTurnosPorFecha" returnType="Optional&lt;List&lt;Turno&gt;&gt;" visibility="public">
+          <Argument type="String" name="idProfesional"/>
+        </Method>
+        <Method name="ordenarTurnosPorPacientes" returnType="Optional&lt;List&lt;Turno&gt;&gt;" visibility="public">
+          <Argument type="String" name="idProfesional"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="UsuarioRepositorio" package="com.serviciosalud.demo.repositorios" visibility="public" xPosition="1163.0" yPosition="645.0">
+      <Methods>
+        <Method name="buscarUsuarioPorId" returnType="Paciente" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="buscarUsuarioPorDni" returnType="Paciente" visibility="public">
+          <Argument type="Integer" name="dni"/>
+        </Method>
+        <Method name="buscarUsuarioPorEmail" returnType="Usuario" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="buscarPacientePorEmail" returnType="Paciente" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="buscarProfesionalPorEmail" returnType="Profesional" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="buscarPorEspecialidad" returnType="List&lt;Profesional&gt;" visibility="public">
+          <Argument type="Especialidad" name="especialidad"/>
+        </Method>
+        <Method name="ordenarPorPrecioFiltro" returnType="List&lt;Profesional&gt;" visibility="public">
+          <Argument type="Especialidad" name="especialidad"/>
+        </Method>
+        <Method name="ordenarPorCalificacionFiltro" returnType="List&lt;Profesional&gt;" visibility="public">
+          <Argument type="Especialidad" name="especialidad"/>
+        </Method>
+        <Method name="ordenarPorPrecio" returnType="List&lt;Profesional&gt;" visibility="public"/>
+        <Method name="ordenarPorCalificacion" returnType="List&lt;Profesional&gt;" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Enum name="Especialidad" package="com.serviciosalud.demo.enumeraciones" visibility="public" xPosition="1950.0" yPosition="1151.0">
+      <Literals>
+        <Literal name="PEDIATRIA"/>
+        <Literal name="GINECOLOGIA"/>
+        <Literal name="CLINICA"/>
+        <Literal name="CARDIOLOGIA"/>
+      </Literals>
+    </Enum>
+    <Enum name="Estado" package="com.serviciosalud.demo.enumeraciones" visibility="public" xPosition="-17.0" yPosition="2036.0">
+      <Literals>
+        <Literal name="DISPONIBLE"/>
+        <Literal name="RESERVADO"/>
+        <Literal name="ATENDIDO"/>
+        <Literal name="CANCELADO"/>
+      </Literals>
+    </Enum>
+    <Enum name="Modalidad" package="com.serviciosalud.demo.enumeraciones" visibility="public" xPosition="1927.0" yPosition="23.0">
+      <Literals>
+        <Literal name="PRESENCIAL"/>
+        <Literal name="TELEMEDICINA"/>
+      </Literals>
+    </Enum>
+    <Enum name="Roles" package="com.serviciosalud.demo.enumeraciones" visibility="public" xPosition="3046.0" yPosition="206.0">
+      <Literals>
+        <Literal name="ADMIN"/>
+        <Literal name="PROFESIONAL"/>
+        <Literal name="PACIENTE"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="usuarioRepositorio" source="com.serviciosalud.demo.controladores.HistoriaClinicaControlador" target="com.serviciosalud.demo.repositorios.UsuarioRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pacienteRepositorio" source="com.serviciosalud.demo.servicios.PacienteServicio" target="com.serviciosalud.demo.repositorios.PacienteRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.servicios.PacienteServicio" target="com.serviciosalud.demo.entidades.Paciente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.servicios.ProfesionalServicio" target="com.serviciosalud.demo.enumeraciones.Especialidad" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="turnoRepositorio" source="com.serviciosalud.demo.controladores.TurnoControlador" target="com.serviciosalud.demo.repositorios.TurnoRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="profesionalServicio" source="com.serviciosalud.demo.controladores.AdminControlador" target="com.serviciosalud.demo.servicios.ProfesionalServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="paciente" source="com.serviciosalud.demo.entidades.Turno" target="com.serviciosalud.demo.entidades.Paciente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="turnoRepositorio" source="com.serviciosalud.demo.controladores.HistoriaClinicaControlador" target="com.serviciosalud.demo.repositorios.TurnoRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pacienteServicio" source="com.serviciosalud.demo.controladores.ImagenControlador" target="com.serviciosalud.demo.servicios.PacienteServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="turnoRepositorio" source="com.serviciosalud.demo.servicios.TurnoServicio" target="com.serviciosalud.demo.repositorios.TurnoRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.repositorios.UsuarioRepositorio" target="com.serviciosalud.demo.enumeraciones.Especialidad" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="rol" source="com.serviciosalud.demo.entidades.Usuario" target="com.serviciosalud.demo.enumeraciones.Roles" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.controladores.TurnoControlador" target="com.serviciosalud.demo.entidades.Profesional" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="com.serviciosalud.demo.entidades.Paciente" target="com.serviciosalud.demo.entidades.Usuario"/>
+    <HasRelation name="turnos" source="com.serviciosalud.demo.entidades.HistoriaClinica" target="com.serviciosalud.demo.entidades.Turno" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Turno&gt;"/>
+    <UseRelation source="com.serviciosalud.demo.servicios.PacienteServicio" target="com.serviciosalud.demo.entidades.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="historiaClinicaRepositorio" source="com.serviciosalud.demo.controladores.HistoriaClinicaControlador" target="com.serviciosalud.demo.repositorios.HistoriaClinicaRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="profesional" source="com.serviciosalud.demo.entidades.Turno" target="com.serviciosalud.demo.entidades.Profesional" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.repositorios.HistoriaClinicaRepositorio" target="com.serviciosalud.demo.entidades.Paciente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="historiaClinicaRepositorio" source="com.serviciosalud.demo.servicios.HistoriaClinicaServicio" target="com.serviciosalud.demo.repositorios.HistoriaClinicaRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="especialidad" source="com.serviciosalud.demo.entidades.Profesional" target="com.serviciosalud.demo.enumeraciones.Especialidad" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.repositorios.TurnoRepositorio" target="com.serviciosalud.demo.entidades.Turno" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.repositorios.UsuarioRepositorio" target="com.serviciosalud.demo.entidades.Profesional" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pacienteServicio" source="com.serviciosalud.demo.controladores.PacienteResControler" target="com.serviciosalud.demo.servicios.PacienteServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.repositorios.PacienteRepositorio" target="com.serviciosalud.demo.enumeraciones.Roles" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagenServicio" source="com.serviciosalud.demo.servicios.ProfesionalServicio" target="com.serviciosalud.demo.servicios.ImagenServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pacienteServicio" source="com.serviciosalud.demo.SeguridadWeb" target="com.serviciosalud.demo.servicios.PacienteServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="img" source="com.serviciosalud.demo.entidades.Usuario" target="com.serviciosalud.demo.entidades.Imagen" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="profesionalRepositorio" source="com.serviciosalud.demo.servicios.ProfesionalServicio" target="com.serviciosalud.demo.repositorios.ProfesionalRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.servicios.ProfesionalServicio" target="com.serviciosalud.demo.entidades.Profesional" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuarioRepositorio" source="com.serviciosalud.demo.servicios.PacienteServicio" target="com.serviciosalud.demo.repositorios.UsuarioRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="com.serviciosalud.demo.entidades.Profesional" target="com.serviciosalud.demo.entidades.Usuario"/>
+    <HasRelation name="paciente" source="com.serviciosalud.demo.entidades.HistoriaClinica" target="com.serviciosalud.demo.entidades.Paciente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="estado" source="com.serviciosalud.demo.entidades.Turno" target="com.serviciosalud.demo.enumeraciones.Estado" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="historiaClinicaServicio" source="com.serviciosalud.demo.controladores.HistoriaClinicaControlador" target="com.serviciosalud.demo.servicios.HistoriaClinicaServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.repositorios.UsuarioRepositorio" target="com.serviciosalud.demo.entidades.Paciente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuarioRepositorio" source="com.serviciosalud.demo.controladores.ProfesionalControlador" target="com.serviciosalud.demo.repositorios.UsuarioRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.servicios.TurnoServicio" target="com.serviciosalud.demo.entidades.Profesional" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="modalidad" source="com.serviciosalud.demo.entidades.Profesional" target="com.serviciosalud.demo.enumeraciones.Modalidad" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="turnoRepositorio" source="com.serviciosalud.demo.controladores.PacienteResControler" target="com.serviciosalud.demo.repositorios.TurnoRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="profesionalServicio" source="com.serviciosalud.demo.SeguridadWeb" target="com.serviciosalud.demo.servicios.ProfesionalServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="profesionalRepositorio" source="com.serviciosalud.demo.controladores.ProfesionalControlador" target="com.serviciosalud.demo.repositorios.ProfesionalRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagenServicio" source="com.serviciosalud.demo.servicios.PacienteServicio" target="com.serviciosalud.demo.servicios.ImagenServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="profesionalServicio" source="com.serviciosalud.demo.controladores.ProfesionalControlador" target="com.serviciosalud.demo.servicios.ProfesionalServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="profesionalServicio" source="com.serviciosalud.demo.controladores.ImagenControlador" target="com.serviciosalud.demo.servicios.ProfesionalServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.repositorios.UsuarioRepositorio" target="com.serviciosalud.demo.entidades.Usuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.servicios.ImagenServicio" target="com.serviciosalud.demo.entidades.Imagen" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.servicios.HistoriaClinicaServicio" target="com.serviciosalud.demo.entidades.Paciente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.servicios.TurnoServicio" target="com.serviciosalud.demo.entidades.Turno" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuarioRepositorio" source="com.serviciosalud.demo.servicios.ProfesionalServicio" target="com.serviciosalud.demo.repositorios.UsuarioRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="turnoRepositorio" source="com.serviciosalud.demo.servicios.HistoriaClinicaServicio" target="com.serviciosalud.demo.repositorios.TurnoRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="imagenRepositorio" source="com.serviciosalud.demo.servicios.ImagenServicio" target="com.serviciosalud.demo.repositorios.ImagenRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="profesionalRepositorio" source="com.serviciosalud.demo.servicios.TurnoServicio" target="com.serviciosalud.demo.repositorios.ProfesionalRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="usuarioRepositorio" source="com.serviciosalud.demo.servicios.HistoriaClinicaServicio" target="com.serviciosalud.demo.repositorios.UsuarioRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="turnoServicio" source="com.serviciosalud.demo.controladores.TurnoControlador" target="com.serviciosalud.demo.servicios.TurnoServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pacienteRepositorio" source="com.serviciosalud.demo.servicios.TurnoServicio" target="com.serviciosalud.demo.repositorios.PacienteRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.serviciosalud.demo.controladores.PacienteResControler" target="com.serviciosalud.demo.entidades.Paciente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pacienteRepositorio" source="com.serviciosalud.demo.controladores.TurnoControlador" target="com.serviciosalud.demo.repositorios.PacienteRepositorio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="profesionalServicio" source="com.serviciosalud.demo.controladores.TurnoControlador" target="com.serviciosalud.demo.servicios.ProfesionalServicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
